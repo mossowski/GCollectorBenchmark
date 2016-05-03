@@ -21,7 +21,19 @@
         <artifactId>exec-maven-plugin</artifactId>
         <version>1.4.0</version>
         <configuration>
-          <mainClass>com.moss.benchmark.App</mainClass>
+          <executable>java</executable>
+          <arguments>
+            <!-- <argument>-XX:+UseSerialGC</argument> -->
+            <!-- <argument>-XX:+UseParallelGC</argument> -->
+            <!-- <argument>-XX:+UseParallelOldGC</argument> -->
+            <!-- <argument>-XX:+UseG1GC</argument> -->
+            <argument>-XX:+PrintGCTimeStamps</argument>
+            <argument>-XX:+PrintGCDetails</argument>
+            <argument>-Xloggc:gc.log</argument>
+            <argument>-classpath</argument>
+            <classpath/>
+            <argument>com.moss.benchmark.App</argument>
+          </arguments>
         </configuration>
       </plugin>
     </plugins>
